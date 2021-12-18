@@ -74,8 +74,10 @@ async def on_send_message(username, message):
         embed.set_footer(text="Made with 💙 by The Statics")
 
         await userRef.send(embed=embed)
+        return 200
     else:
         print("User not found!")
+        return 404
 
 
 def dispatchSendMessageEvent(username, message):
