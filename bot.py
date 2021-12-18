@@ -9,9 +9,6 @@ intents.members = True
 
 bot = commands.Bot(intents=intents, command_prefix="!")
 
-testUser = "yyjlincoln#5912"
-testUser = "Bonsaï#8521"
-
 
 @bot.event
 async def on_ready():
@@ -56,8 +53,3 @@ async def on_send_message(username, message):
 
 def dispatchSendMessageEvent(username, message):
     bot.dispatch("send_message", username, message)
-
-
-if __name__ == "__main__":
-   bot.run("OTIxNjgxOTg0MDM0NTk4OTIz.Yb2dPQ.xb1BnBZ5TkmOkJyT40qGtXmN-dk")
-
