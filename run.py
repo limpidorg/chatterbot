@@ -1,7 +1,9 @@
+import asyncio
 import discord
 import threading
 import time
 import json
+import asyncio
 
 from .clients.CustomClient import CustomClient
 
@@ -15,5 +17,7 @@ intents.members = True
 
 bot = CustomClient(command_prefix="-", intents=intents)
 
-t_run = threading.Thread(target=bot.run, args=(secrets["apiKey"],))
+loop = asyncio.get_event_loop()
+loop.create_task(bot.start(secrets["apiKey"]))
+t_run = threading.Thread(target=loop.run_forever)
 t_run.start()
